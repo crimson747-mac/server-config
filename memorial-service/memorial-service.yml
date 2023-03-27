@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active:
+      on-profile: default
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/memorial-service?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: '{cipher}187bab09ae65796ad5a42eeac49c5bd26d6e96c1a425db83bd5923a54c3c8c2f'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
